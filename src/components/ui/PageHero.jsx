@@ -22,7 +22,7 @@ function PageHero({
               : ''
           }
         >
-          <div className="space-y-6">
+          <div className="space-y-6" data-reveal="soft">
             <SectionHeader
               eyebrow={eyebrow}
               title={title}
@@ -40,7 +40,7 @@ function PageHero({
           </div>
 
           {media ? (
-            <div className="relative" data-reveal>
+            <div className="relative" data-reveal="image">
               <div className="absolute -left-6 top-8 hidden h-32 w-32 rounded-full bg-brand-yellow-100 blur-3xl lg:block" />
               <div className="absolute -right-6 bottom-5 hidden h-32 w-32 rounded-full bg-brand-green-100 blur-3xl lg:block" />
               <div className="image-shell relative h-[15.5rem] overflow-hidden rounded-[2rem] sm:h-[18rem] lg:h-[13.5rem] xl:h-[14.5rem]">

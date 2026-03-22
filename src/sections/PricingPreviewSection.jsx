@@ -37,7 +37,7 @@ function PricingPreviewSection() {
           />
           <Link
             to="/pricing"
-            className="text-sm font-semibold text-surface-700 no-underline transition hover:text-brand-green-700"
+            className="text-sm font-semibold text-surface-700 no-underline transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:translate-x-0.5 hover:text-brand-green-700"
           >
             See pricing details
           </Link>

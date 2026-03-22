@@ -26,18 +26,18 @@ function Navbar() {
 
   const navLinkClassName = ({ isActive }) =>
     [
-      'relative py-2 text-[0.82rem] font-semibold uppercase tracking-[0.18em] transition-all duration-300 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-yellow-400 after:transition-transform after:duration-300',
+      'relative py-2 text-[0.8rem] font-semibold uppercase tracking-[0.2em] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-yellow-400 after:transition-transform after:duration-300',
       isActive
         ? 'text-surface-700 after:scale-x-100'
-        : 'text-surface-400 hover:text-surface-700 hover:after:scale-x-100',
+        : 'text-surface-400 hover:text-surface-700 hover:after:scale-x-100 hover:tracking-[0.22em]',
     ].join(' ')
 
   return (
     <header
       className={[
-        'sticky top-0 z-30 transition-all duration-300',
+        'sticky top-0 z-30 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]',
         isScrolled
-          ? 'border-b border-surface-200/80 bg-surface-0/82 shadow-soft backdrop-blur-2xl'
+          ? 'border-b border-surface-200/80 bg-surface-0/88 shadow-soft backdrop-blur-2xl'
           : 'bg-surface-0/72 backdrop-blur-xl',
       ].join(' ')}
     >
@@ -65,7 +65,7 @@ function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-surface-200/90 bg-surface-0/90 text-surface-700 shadow-inset transition duration-300 hover:border-surface-300 hover:bg-surface-0 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-surface-200/90 bg-surface-0/90 text-surface-700 shadow-inset transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-0.5 hover:border-surface-300 hover:bg-surface-0 hover:shadow-soft lg:hidden"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setIsMenuOpen((open) => !open)}

@@ -14,6 +14,13 @@ function AppLayout() {
       return undefined
     }
 
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (reducedMotion) {
+      elements.forEach((element) => element.classList.add('is-visible'))
+      return undefined
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -23,7 +30,7 @@ function AppLayout() {
           }
         })
       },
-      { threshold: 0.16, rootMargin: '0px 0px -48px 0px' },
+      { threshold: 0.14, rootMargin: '0px 0px -56px 0px' },
     )
 
     elements.forEach((element) => observer.observe(element))

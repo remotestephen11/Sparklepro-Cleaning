@@ -28,7 +28,7 @@ function WhyChooseUsSection() {
     <section className="bg-surface-0">
       <div className="container section-space">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)] lg:items-start">
-          <div className="surface-panel-muted rounded-[2rem] p-6 sm:p-7 lg:p-8">
+          <div className="surface-panel-muted rounded-[2rem] p-6 sm:p-7 lg:p-8" data-reveal="soft">
             <SectionHeader
               eyebrow="Why Choose Us"
               title={

@@ -33,10 +33,10 @@ function HomeProcessSection() {
 
           <div className="grid gap-4 md:grid-cols-3">
             {steps.map((step, index) => (
-              <Card key={step.step} revealOrder={index} className="bg-surface-0 p-5 lg:p-6">
+              <Card key={step.step} revealOrder={index} className="group bg-surface-0 p-5 lg:p-6">
                 <p className="font-premium text-[2rem] italic text-surface-400">{step.step}</p>
                 <h3 className="mt-4 text-[1.25rem] leading-[1.1]">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-surface-500">{step.description}</p>
+                <p className="mt-3 text-sm leading-6 text-surface-500 transition-colors duration-300 group-hover:text-surface-600">{step.description}</p>
               </Card>
             ))}
           </div>

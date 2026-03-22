@@ -73,8 +73,8 @@ function ServicesPreviewSection() {
             >
               <div className="mb-6 flex items-center justify-between">
                 <span className="section-kicker text-surface-400">{service.tag}</span>
-                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-surface-200/70 ${service.accent}`}>
-                  <div className="h-6 w-6 rounded-full border-2 border-surface-700/20"></div>
+                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-surface-200/70 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-0.5 ${service.accent}`}>
+                  <div className="h-6 w-6 rounded-full border-2 border-surface-700/20 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-110"></div>
                 </span>
               </div>
 
@@ -85,7 +85,7 @@ function ServicesPreviewSection() {
 
               <div className="mt-6 flex flex-col items-start gap-3 border-t border-surface-200/80 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                 <p className="text-sm font-medium text-surface-500">{service.detail}</p>
-                <span className="text-sm font-semibold text-brand-green-700">
+                <span className="text-sm font-semibold text-brand-green-700 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:translate-x-0.5">
                   Learn more
                 </span>
               </div>

@@ -10,7 +10,7 @@ function Card({ children, className = '', variant = 'default', revealOrder }) {
     <div
       data-reveal
       className={[
-        'rounded-[1.75rem] p-6 sm:p-7 lg:p-8',
+        'rounded-[1.75rem] p-6 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] motion-reduce:transform-none hover:-translate-y-1 hover:shadow-card sm:p-7 lg:p-8',
         variantClasses[variant],
         className,
       ]

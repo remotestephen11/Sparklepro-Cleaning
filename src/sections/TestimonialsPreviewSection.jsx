@@ -33,7 +33,7 @@ function TestimonialsPreviewSection() {
               <Card
                 key={testimonial.name}
                 revealOrder={index}
-                className="bg-surface-0"
+                className="group bg-surface-0"
               >
                 <div className="flex items-center justify-between">
                   <div className="text-4xl leading-none text-brand-yellow-400">"</div>
@@ -41,7 +41,7 @@ function TestimonialsPreviewSection() {
                     Verified client
                   </div>
                 </div>
-                <p className="mt-4 text-lg leading-8 text-surface-600">{testimonial.quote}</p>
+                <p className="mt-4 text-lg leading-8 text-surface-600 transition-colors duration-300 group-hover:text-surface-700">{testimonial.quote}</p>
                 <div className="mt-8 border-t border-surface-200 pt-5">
                   <p className="font-semibold text-surface-700">{testimonial.name}</p>
                   <p className="mt-1 text-sm text-surface-500">{testimonial.role}</p>
