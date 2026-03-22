@@ -32,8 +32,8 @@ function HomeProcessSection() {
           />
 
           <div className="grid gap-5 md:grid-cols-3">
-            {steps.map((step) => (
-              <Card key={step.step} className="bg-surface-0 p-6 lg:p-7">
+            {steps.map((step, index) => (
+              <Card key={step.step} revealOrder={index} className="bg-surface-0 p-6 lg:p-7">
                 <p className="font-premium text-4xl italic text-surface-400">{step.step}</p>
                 <h3 className="mt-5 text-[1.45rem] leading-[1.1]">{step.title}</h3>
                 <p className="mt-4 text-sm leading-7 text-surface-500">{step.description}</p>

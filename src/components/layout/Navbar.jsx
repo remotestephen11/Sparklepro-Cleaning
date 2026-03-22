@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { Button } from '../ui'
+import { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import { BrandMark, Button } from '../ui'
 
 const navigationItems = [
   { to: '/', label: 'Home' },
@@ -12,38 +12,38 @@ const navigationItems = [
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 24)
+    }
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const navLinkClassName = ({ isActive }) =>
     [
-      'relative text-sm font-medium tracking-[0.01em] transition-colors duration-200 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-yellow-400 after:transition-transform after:duration-200',
+      'relative py-2 text-[0.82rem] font-semibold uppercase tracking-[0.18em] transition-all duration-300 after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-yellow-400 after:transition-transform after:duration-300',
       isActive
         ? 'text-surface-700 after:scale-x-100'
-        : 'text-surface-500 hover:text-surface-700 hover:after:scale-x-100',
+        : 'text-surface-400 hover:text-surface-700 hover:after:scale-x-100',
     ].join(' ')
 
   return (
-    <header className="sticky top-0 z-30 border-b border-surface-200/80 bg-surface-0/90 backdrop-blur-xl">
+    <header
+      className={[
+        'sticky top-0 z-30 transition-all duration-300',
+        isScrolled
+          ? 'border-b border-surface-200/80 bg-surface-0/82 shadow-soft backdrop-blur-2xl'
+          : 'bg-surface-0/72 backdrop-blur-xl',
+      ].join(' ')}
+    >
       <div className="container">
-        <div className="flex min-h-18 items-center justify-between gap-4 sm:min-h-20 sm:gap-6">
-          <Link
-            to="/"
-            className="min-w-0 no-underline"
-            aria-label="SparklePro Cleaning Services home"
-          >
-            <div className="flex items-center gap-3 sm:gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[1.1rem] border border-brand-yellow-200 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft sm:h-12 sm:w-12">
-                <span className="font-premium text-lg not-italic tracking-[-0.06em]">SP</span>
-              </div>
-              <div className="min-w-0">
-                <p className="truncate text-sm font-semibold leading-5 tracking-[-0.03em] text-surface-700 sm:text-base">
-                  SparklePro
-                </p>
-                <p className="truncate text-[0.72rem] font-medium uppercase tracking-[0.18em] text-surface-400 sm:text-xs">
-                  Cleaning Services
-                </p>
-              </div>
-            </div>
-          </Link>
+        <div className={['flex items-center justify-between gap-4 sm:gap-6', isScrolled ? 'min-h-16 sm:min-h-[4.5rem]' : 'min-h-[4.6rem] sm:min-h-[5.15rem]'].join(' ')}>
+          <BrandMark />
 
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
             {navigationItems.map((item) => (
@@ -57,6 +57,7 @@ function Navbar() {
             <Button
               href="tel:+1234567890"
               className="px-5 py-3"
+              variant="primary"
             >
               Book a Cleaning
             </Button>
@@ -64,7 +65,7 @@ function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-surface-200 bg-surface-0 text-surface-700 shadow-inset lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-surface-200/90 bg-surface-0/90 text-surface-700 shadow-inset transition duration-300 hover:border-surface-300 hover:bg-surface-0 lg:hidden"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -80,14 +81,14 @@ function Navbar() {
 
         {isMenuOpen ? (
           <div className="border-t border-surface-200 py-4 lg:hidden">
-            <nav className="flex flex-col gap-3 rounded-[1.5rem] bg-surface-50 p-4" aria-label="Mobile primary">
+            <nav className="flex flex-col gap-3 rounded-[1.5rem] bg-surface-50 p-4 shadow-soft" aria-label="Mobile primary">
               {navigationItems.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
                   className={({ isActive }) =>
                     [
-                      'rounded-xl px-4 py-3 text-sm font-medium no-underline transition',
+                      'rounded-xl px-4 py-3 text-[0.82rem] font-semibold uppercase tracking-[0.18em] no-underline transition',
                       isActive
                         ? 'bg-surface-0 text-surface-700 shadow-inset'
                         : 'text-surface-500 hover:bg-surface-0 hover:text-surface-700',

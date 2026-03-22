@@ -7,6 +7,7 @@ function SectionHeader({
   className = '',
   titleClassName = '',
   descriptionClassName = '',
+  reveal = true,
 }) {
   const alignmentClass = align === 'center' ? 'text-center' : ''
   const eyebrowColor = invert
@@ -16,11 +17,11 @@ function SectionHeader({
   const descriptionColor = invert ? 'text-surface-200' : 'text-surface-500'
 
   return (
-    <div className={['space-y-5', alignmentClass, className].filter(Boolean).join(' ')}>
+    <div data-reveal={reveal ? true : undefined} className={['space-y-4', alignmentClass, className].filter(Boolean).join(' ')}>
       {eyebrow ? (
         <p
           className={[
-            'inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] shadow-inset',
+            'inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.22em] shadow-inset',
             eyebrowColor,
           ].join(' ')}
         >
@@ -36,7 +37,7 @@ function SectionHeader({
         <p
           className={[
             align === 'center' ? 'mx-auto' : '',
-            'max-w-reading text-base leading-8',
+            'max-w-reading text-[0.98rem] leading-7 sm:text-base sm:leading-8',
             descriptionColor,
             descriptionClassName,
           ]

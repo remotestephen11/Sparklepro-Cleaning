@@ -21,12 +21,16 @@ function TrustStripSection() {
           </div>
 
           <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-            {trustItems.map((item) => (
+            {trustItems.map((item, index) => (
               <div
                 key={item}
+                data-reveal
                 className="flex items-center gap-3 rounded-full border border-surface-600/70 bg-surface-700/80 px-4 py-3 shadow-inset"
+                style={{ '--reveal-order': index }}
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-0/10 text-brand-yellow-200">•</span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-0/10 text-brand-yellow-200">
+                  +
+                </span>
                 <span className="text-sm font-medium text-surface-100">{item}</span>
               </div>
             ))}

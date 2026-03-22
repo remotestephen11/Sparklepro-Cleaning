@@ -29,9 +29,10 @@ function TestimonialsPreviewSection() {
           />
 
           <div className="grid gap-6 md:grid-cols-2">
-            {testimonials.map((testimonial) => (
+            {testimonials.map((testimonial, index) => (
               <Card
                 key={testimonial.name}
+                revealOrder={index}
                 className="bg-surface-0"
               >
                 <div className="flex items-center justify-between">

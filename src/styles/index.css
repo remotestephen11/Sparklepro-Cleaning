@@ -42,15 +42,15 @@
   }
 
   h1 {
-    @apply text-[2.85rem] leading-[0.95] sm:text-[3.85rem] lg:text-[5rem];
+    @apply text-[2.5rem] leading-[0.96] sm:text-[3.4rem] lg:text-[4.35rem];
   }
 
   h2 {
-    @apply text-[2.15rem] leading-[1] sm:text-[2.8rem] lg:text-[3.55rem];
+    @apply text-[2rem] leading-[1] sm:text-[2.55rem] lg:text-[3.1rem];
   }
 
   h3 {
-    @apply text-[1.65rem] leading-[1.08] sm:text-[2.1rem];
+    @apply text-[1.55rem] leading-[1.08] sm:text-[1.9rem];
   }
 
   h4 {
@@ -105,15 +105,19 @@
   .content-grid {
     @apply grid gap-8 lg:gap-10;
   }
+
+  .nav-link-premium {
+    @apply text-[0.82rem] font-semibold uppercase tracking-[0.18em];
+  }
 }
 
 @layer components {
   .section-space {
-    @apply py-18 sm:py-22 lg:py-30;
+    @apply py-16 sm:py-18 lg:py-24;
   }
 
   .section-space-tight {
-    @apply py-14 sm:py-16;
+    @apply py-10 sm:py-12;
   }
 
   .surface-panel {
@@ -138,5 +142,28 @@
 
   .image-cover {
     @apply h-full w-full object-cover;
+  }
+
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 650ms cubic-bezier(0.2, 0.8, 0.2, 1),
+      transform 650ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition-delay: calc(var(--reveal-order, 0) * 90ms);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }

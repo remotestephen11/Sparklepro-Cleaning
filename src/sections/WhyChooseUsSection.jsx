@@ -56,6 +56,7 @@ function WhyChooseUsSection() {
             {reasons.map((reason, index) => (
               <Card
                 key={reason.title}
+                revealOrder={index}
                 className="bg-surface-0"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-brand-green-100 bg-brand-green-50 text-sm font-semibold text-brand-green-700">

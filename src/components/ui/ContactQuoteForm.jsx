@@ -4,7 +4,7 @@ import Card from './Card'
 import SectionHeader from './SectionHeader'
 
 const inputClassName =
-  'h-12 w-full rounded-2xl border border-surface-200 bg-surface-50 px-4 text-sm text-surface-700 outline-none transition placeholder:text-surface-400 focus:border-brand-green-400 focus:bg-surface-0'
+  'h-11 w-full rounded-2xl border border-surface-200 bg-surface-50 px-4 text-sm text-surface-700 outline-none transition duration-300 placeholder:text-surface-400 focus:border-brand-green-400 focus:bg-surface-0'
 
 const labelClassName = 'text-sm font-medium text-surface-700'
 
@@ -85,12 +85,12 @@ function ContactQuoteForm() {
         eyebrow="Request a Quote"
         title="Tell us about your space."
         description="Share a few details about the property and the type of cleaning support you need. We will use this to understand the scope and follow up with the right next step."
-        titleClassName="max-w-[11ch] text-[2rem] leading-tight sm:text-[2.35rem]"
-        descriptionClassName="text-base leading-7 text-surface-500"
+        titleClassName="max-w-[11ch] text-[1.85rem] leading-tight sm:text-[2.15rem]"
+        descriptionClassName="text-[0.98rem] leading-7 text-surface-500"
       />
 
-      <form className="mt-8 space-y-5" onSubmit={handleSubmit} noValidate>
-        <div className="grid gap-5 sm:grid-cols-2">
+      <form className="mt-7 space-y-5" onSubmit={handleSubmit} noValidate>
+        <div className="grid gap-4 sm:grid-cols-2">
           <div className="space-y-2">
             <label htmlFor="fullName" className={labelClassName}>
               Full Name
@@ -212,7 +212,7 @@ function ContactQuoteForm() {
             name="message"
             rows="6"
             placeholder="Tell us about the size of the space, preferred frequency, and any priorities for the quote."
-            className="w-full rounded-2xl border border-surface-200 bg-surface-50 px-4 py-3 text-sm leading-6 text-surface-700 outline-none transition placeholder:text-surface-400 focus:border-brand-green-400 focus:bg-surface-0"
+            className="w-full rounded-2xl border border-surface-200 bg-surface-50 px-4 py-3 text-sm leading-6 text-surface-700 outline-none transition duration-300 placeholder:text-surface-400 focus:border-brand-green-400 focus:bg-surface-0"
             value={formData.message}
             onChange={handleChange}
             required

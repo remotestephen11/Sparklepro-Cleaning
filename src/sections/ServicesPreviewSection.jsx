@@ -65,9 +65,10 @@ function ServicesPreviewSection() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
+          {services.map((service, index) => (
             <Card
               key={service.title}
+              revealOrder={index}
               className="group flex h-full flex-col bg-surface-0 transition hover:-translate-y-1 hover:border-surface-300"
             >
               <div className="mb-6 flex items-center justify-between">

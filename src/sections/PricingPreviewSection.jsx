@@ -44,9 +44,10 @@ function PricingPreviewSection() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {pricingTiers.map((tier) => (
+          {pricingTiers.map((tier, index) => (
             <Card
               key={tier.name}
+              revealOrder={index}
               className={[
                 'md:last:col-span-2 xl:last:col-span-1',
                 tier.featured
