@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
 
   useEffect(() => {
     if (!('scrollRestoration' in window.history)) {
@@ -18,12 +18,16 @@ function ScrollToTop() {
   }, [])
 
   useLayoutEffect(() => {
+    if (hash) {
+      return
+    }
+
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'auto',
     })
-  }, [pathname])
+  }, [pathname, hash])
 
   return null
 }

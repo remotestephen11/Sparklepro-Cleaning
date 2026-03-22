@@ -5,7 +5,7 @@ const services = [
   {
     title: 'Residential Cleaning',
     description:
-      'Routine cleaning for living spaces, kitchens, bathrooms, and bedrooms with a polished, guest-ready finish.',
+      'Routine cleaning for living spaces with a polished, guest-ready finish.',
     detail: 'Weekly, biweekly, or monthly plans',
     accent: 'bg-brand-yellow-100',
     tag: 'Homes',
@@ -13,7 +13,7 @@ const services = [
   {
     title: 'Office Cleaning',
     description:
-      'Reliable upkeep for workspaces, reception areas, meeting rooms, kitchens, and shared touchpoints.',
+      'Reliable upkeep for workspaces, meeting rooms, kitchens, and shared touchpoints.',
     detail: 'Before-hours and recurring scheduling',
     accent: 'bg-brand-green-100',
     tag: 'Workspaces',
@@ -21,7 +21,7 @@ const services = [
   {
     title: 'Deep Cleaning',
     description:
-      'A more thorough reset for homes or workplaces that need detailed attention beyond standard maintenance.',
+      'A more thorough reset for spaces that need attention beyond standard maintenance.',
     detail: 'Ideal for seasonal or first-time service',
     accent: 'bg-brand-yellow-50',
     tag: 'Reset',
@@ -29,7 +29,7 @@ const services = [
   {
     title: 'Move-In / Move-Out Cleaning',
     description:
-      'Detailed cleaning for property transitions so spaces feel ready for handover, arrival, or listing photos.',
+      'Detailed cleaning for property transitions, handovers, and move days.',
     detail: 'For tenants, homeowners, and landlords',
     accent: 'bg-surface-100',
     tag: 'Transitions',
@@ -37,7 +37,7 @@ const services = [
   {
     title: 'Post-Construction Cleaning',
     description:
-      'Careful dust removal, surface wipe-downs, and finishing cleanup after renovations or building work.',
+      'Careful dust removal and finishing cleanup after renovations or building work.',
     detail: 'Designed for recently completed projects',
     accent: 'bg-brand-red-50',
     tag: 'Specialty',
@@ -51,8 +51,8 @@ function ServicesPreviewSection() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeader
             eyebrow="Services Preview"
-            title="Professional cleaning for spaces that need to stay consistently well kept."
-            description="From recurring home care to detailed post-project cleanup, our services are structured to keep spaces clean, presentable, and easy to maintain over time."
+            title="Professional cleaning for spaces that need to stay well kept."
+            description="Recurring care, deeper resets, and property-focused service."
             className="max-w-[42rem]"
             titleClassName="max-w-[12ch]"
           />
@@ -64,7 +64,7 @@ function ServicesPreviewSection() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service, index) => (
             <Card
               key={service.title}
@@ -79,11 +79,11 @@ function ServicesPreviewSection() {
               </div>
 
               <div className="flex-1">
-                <h3 className="max-w-[12ch] text-[1.65rem] leading-[1.1]">{service.title}</h3>
-                <p className="mt-4">{service.description}</p>
+                <h3 className="max-w-[12ch] text-[1.45rem] leading-[1.08]">{service.title}</h3>
+                <p className="mt-3 text-sm leading-6">{service.description}</p>
               </div>
 
-              <div className="mt-8 flex flex-col items-start gap-3 border-t border-surface-200/80 pt-5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+              <div className="mt-6 flex flex-col items-start gap-3 border-t border-surface-200/80 pt-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                 <p className="text-sm font-medium text-surface-500">{service.detail}</p>
                 <span className="text-sm font-semibold text-brand-green-700">
                   Learn more
