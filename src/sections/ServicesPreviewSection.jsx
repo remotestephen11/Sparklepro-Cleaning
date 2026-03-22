@@ -8,6 +8,7 @@ const services = [
       'Routine cleaning for living spaces, kitchens, bathrooms, and bedrooms with a polished, guest-ready finish.',
     detail: 'Weekly, biweekly, or monthly plans',
     accent: 'bg-brand-yellow-100',
+    tag: 'Homes',
   },
   {
     title: 'Office Cleaning',
@@ -15,6 +16,7 @@ const services = [
       'Reliable upkeep for workspaces, reception areas, meeting rooms, kitchens, and shared touchpoints.',
     detail: 'Before-hours and recurring scheduling',
     accent: 'bg-brand-green-100',
+    tag: 'Workspaces',
   },
   {
     title: 'Deep Cleaning',
@@ -22,6 +24,7 @@ const services = [
       'A more thorough reset for homes or workplaces that need detailed attention beyond standard maintenance.',
     detail: 'Ideal for seasonal or first-time service',
     accent: 'bg-brand-yellow-50',
+    tag: 'Reset',
   },
   {
     title: 'Move-In / Move-Out Cleaning',
@@ -29,6 +32,7 @@ const services = [
       'Detailed cleaning for property transitions so spaces feel ready for handover, arrival, or listing photos.',
     detail: 'For tenants, homeowners, and landlords',
     accent: 'bg-surface-100',
+    tag: 'Transitions',
   },
   {
     title: 'Post-Construction Cleaning',
@@ -36,6 +40,7 @@ const services = [
       'Careful dust removal, surface wipe-downs, and finishing cleanup after renovations or building work.',
     detail: 'Designed for recently completed projects',
     accent: 'bg-brand-red-50',
+    tag: 'Specialty',
   },
 ]
 
@@ -65,8 +70,11 @@ function ServicesPreviewSection() {
               key={service.title}
               className="group flex h-full flex-col bg-surface-0 transition hover:-translate-y-1 hover:border-surface-300"
             >
-              <div className={`mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-surface-200/70 ${service.accent}`}>
-                <div className="h-6 w-6 rounded-full border-2 border-surface-700/20"></div>
+              <div className="mb-6 flex items-center justify-between">
+                <span className="section-kicker text-surface-400">{service.tag}</span>
+                <span className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-surface-200/70 ${service.accent}`}>
+                  <div className="h-6 w-6 rounded-full border-2 border-surface-700/20"></div>
+                </span>
               </div>
 
               <div className="flex-1">

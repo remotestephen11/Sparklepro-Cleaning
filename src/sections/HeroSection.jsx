@@ -1,24 +1,25 @@
 import { Button } from '../components/ui'
+import { siteImages } from '../data/siteImages'
 
 function HeroSection() {
   return (
     <section className="relative overflow-hidden border-b border-surface-200/80 bg-surface-25">
-      <div className="absolute inset-x-0 top-0 h-[34rem] bg-[radial-gradient(circle_at_top_left,rgba(255,212,94,0.22),transparent_42%),radial-gradient(circle_at_right,rgba(59,135,98,0.09),transparent_30%)]" />
-      <div className="container relative section-space">
-        <div className="grid gap-10 sm:gap-12 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:items-center">
-          <div className="max-w-content">
+      <div className="absolute inset-x-0 top-0 h-[40rem] bg-[radial-gradient(circle_at_top_left,rgba(255,212,94,0.18),transparent_38%),radial-gradient(circle_at_right,rgba(59,135,98,0.12),transparent_28%)]" />
+      <div className="container relative max-w-hero section-space">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.88fr)_minmax(22rem,1.12fr)] lg:items-center lg:gap-14">
+          <div className="max-w-[36rem]">
             <div className="eyebrow-label border-brand-yellow-200/70 bg-brand-yellow-50 text-surface-700">
-              Trusted recurring cleaning for homes, offices, and managed properties
+              Premium recurring cleaning for refined homes and professional spaces
             </div>
 
             <div className="mt-8 space-y-6">
-              <h1 className="max-w-[10.5ch] text-[3.1rem] leading-[0.96] sm:text-[4rem] lg:text-[5.2rem]">
-                Cleaning for spaces that need to feel quietly impressive.
+              <h1 className="max-w-[9.5ch] text-[3.15rem] leading-[0.92] sm:text-[4.3rem] lg:text-[5.5rem]">
+                Cleaning that keeps your space <span className="font-premium italic text-surface-600">beautifully kept</span>.
               </h1>
-              <p className="max-w-[38rem] text-base leading-8 text-surface-500 sm:text-lg">
-                SparklePro delivers dependable residential and workplace cleaning with
-                detail-focused teams, organized scheduling, and a presentation standard
-                clients can confidently maintain week after week.
+              <p className="max-w-[34rem] text-base leading-8 text-surface-500 sm:text-lg">
+                SparklePro provides polished recurring cleaning, deep resets, and office upkeep
+                for clients who value discretion, consistency, and a premium standard that lasts
+                beyond the day of service.
               </p>
             </div>
 
@@ -53,66 +54,48 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="surface-panel relative overflow-hidden rounded-[2rem] bg-surface-0 p-6 lg:p-8">
-            <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-brand-yellow-200 to-transparent" />
-            <div className="rounded-[1.5rem] border border-surface-200/70 bg-surface-50 p-6">
-              <p className="eyebrow-label border-transparent bg-surface-0/70 text-brand-green-700 shadow-none">
-                Why clients book with confidence
-              </p>
-              <div className="mt-6 space-y-5">
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 h-3 w-3 rounded-full bg-brand-yellow-300"></div>
-                  <div>
-                    <p className="font-semibold text-surface-700">Consistent recurring care</p>
-                    <p className="mt-1 text-sm leading-6 text-surface-500">
-                      Weekly, biweekly, and custom service plans that stay on schedule.
-                    </p>
-                  </div>
+          <div className="relative">
+            <div className="absolute -left-4 top-10 hidden h-40 w-40 rounded-full bg-brand-yellow-100 blur-3xl lg:block" />
+            <div className="absolute -right-8 bottom-8 hidden h-48 w-48 rounded-full bg-brand-green-100 blur-3xl lg:block" />
+            <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_11rem]">
+              <div className="image-shell relative aspect-[0.9] rounded-[2.5rem]">
+                <img
+                  src={siteImages.heroLivingRoom.src}
+                  alt={siteImages.heroLivingRoom.alt}
+                  className="image-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-800/35 via-transparent to-transparent" />
+                <div className="absolute left-4 top-4 rounded-full bg-surface-0/90 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-surface-600 shadow-soft">
+                  SparklePro standard
                 </div>
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 h-3 w-3 rounded-full bg-brand-green-500"></div>
-                  <div>
-                    <p className="font-semibold text-surface-700">Detail-driven finishing</p>
-                    <p className="mt-1 text-sm leading-6 text-surface-500">
-                      Kitchens, bathrooms, floors, and high-touch areas handled with care.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="mt-1 h-3 w-3 rounded-full bg-brand-red-400"></div>
-                  <div>
-                    <p className="font-semibold text-surface-700">Responsive account support</p>
-                    <p className="mt-1 text-sm leading-6 text-surface-500">
-                      Clear scheduling, fast follow-up, and straightforward communication.
-                    </p>
-                  </div>
+                <div className="absolute bottom-4 left-4 right-4 max-w-[15rem] rounded-[1.5rem] bg-surface-0/92 p-5 shadow-card backdrop-blur">
+                  <p className="section-kicker text-brand-green-700">Client trust</p>
+                  <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-surface-700">
+                    Presentation-ready finishes with discreet recurring support.
+                  </p>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <div className="rounded-[1.5rem] bg-surface-700 p-6 text-surface-100 shadow-card">
-                <p className="eyebrow-label border-transparent bg-surface-0/5 text-brand-yellow-200 shadow-none">
-                  Service coverage
-                </p>
-                <p className="mt-5 text-xl font-semibold leading-8 text-surface-0">
-                  Residential cleaning, office upkeep, deep cleans, and move-in or move-out service.
-                </p>
-              </div>
-              <div className="rounded-[1.5rem] border border-surface-200/80 bg-surface-0 p-6 shadow-inset">
-                <p className="eyebrow-label border-transparent bg-surface-50 text-surface-500 shadow-none">
-                  Booking process
-                </p>
-                <div className="mt-5 space-y-3">
-                  <p className="text-sm leading-6 text-surface-600">
-                    1. Share your space and cleaning needs
-                  </p>
-                  <p className="text-sm leading-6 text-surface-600">
-                    2. Receive a clear service recommendation
-                  </p>
-                  <p className="text-sm leading-6 text-surface-600">
-                    3. Choose a plan and schedule your first visit
-                  </p>
+              <div className="grid gap-4">
+                <div className="image-shell aspect-[0.8] rounded-[1.75rem]">
+                  <img
+                    src={siteImages.kitchenDetail.src}
+                    alt={siteImages.kitchenDetail.alt}
+                    className="image-cover"
+                  />
+                </div>
+                <div className="surface-panel rounded-[1.75rem] bg-surface-0 p-5">
+                  <p className="section-kicker text-brand-green-700">Why clients stay</p>
+                  <div className="mt-4 space-y-4">
+                    <div>
+                      <p className="text-sm font-semibold text-surface-700">Tailored plans</p>
+                      <p className="mt-1 text-sm leading-6 text-surface-500">Recurring, one-time, and property-specific scopes.</p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-surface-700">Quiet professionalism</p>
+                      <p className="mt-1 text-sm leading-6 text-surface-500">Reliable teams, clear communication, and insured care.</p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

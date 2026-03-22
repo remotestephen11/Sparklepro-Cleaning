@@ -1,4 +1,5 @@
 import { CalloutBanner } from '../../components/ui'
+import { siteImages } from '../../data/siteImages'
 
 function PricingCtaSection() {
   return (
@@ -9,6 +10,15 @@ function PricingCtaSection() {
       primaryAction={{ to: '/contact', label: 'Get a Quote' }}
       secondaryAction={{ to: '/services', label: 'View Services' }}
       tone="dark"
+      media={siteImages.officeWorkspace}
+      aside={
+        <>
+          <p className="section-kicker text-surface-300">Premium planning</p>
+          <p className="mt-3 text-base leading-7 text-surface-200">
+            Transparent starting points, then a quote shaped around the way the property is used.
+          </p>
+        </>
+      }
     />
   )
 }

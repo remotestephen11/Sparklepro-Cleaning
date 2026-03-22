@@ -1,4 +1,5 @@
 import { Card, SectionHeader, ContactQuoteForm } from '../../components/ui'
+import { siteImages } from '../../data/siteImages'
 
 const contactMethods = [
   {
@@ -68,6 +69,10 @@ function ContactDetailsSection() {
                 availability with your quote.
               </p>
             </Card>
+
+            <div className="image-shell aspect-[1.12] rounded-[2rem]">
+              <img src={siteImages.officeWorkspace.src} alt={siteImages.officeWorkspace.alt} className="image-cover" />
+            </div>
           </div>
 
           <ContactQuoteForm />

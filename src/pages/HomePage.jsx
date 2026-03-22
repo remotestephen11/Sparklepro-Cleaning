@@ -1,6 +1,8 @@
 import {
   CtaBannerSection,
+  FeaturedStorySection,
   HeroSection,
+  HomeProcessSection,
   PricingPreviewSection,
   ServicesPreviewSection,
   TestimonialsPreviewSection,
@@ -14,7 +16,9 @@ function HomePage() {
       <HeroSection />
       <TrustStripSection />
       <ServicesPreviewSection />
+      <FeaturedStorySection />
       <WhyChooseUsSection />
+      <HomeProcessSection />
       <PricingPreviewSection />
       <TestimonialsPreviewSection />
       <CtaBannerSection />

@@ -25,7 +25,7 @@ const pricingTiers = [
 
 function PricingPreviewSection() {
   return (
-    <section className="border-y border-surface-200/80 bg-surface-25">
+    <section className="border-y border-surface-200/80 bg-surface-50">
       <div className="container section-space">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <SectionHeader
@@ -59,7 +59,7 @@ function PricingPreviewSection() {
                   <p className="text-sm font-medium uppercase tracking-[0.14em] text-surface-500">
                     {tier.name}
                   </p>
-                  <p className="mt-5 text-3xl font-semibold text-surface-700">{tier.price}</p>
+                  <p className="mt-5 text-[2.15rem] font-semibold tracking-[-0.04em] text-surface-700">{tier.price}</p>
                 </div>
                 {tier.featured ? (
                   <span className="rounded-full bg-surface-700 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-surface-0">

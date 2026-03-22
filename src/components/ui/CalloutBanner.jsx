@@ -10,6 +10,7 @@ function CalloutBanner({
   secondaryAction,
   tone = 'light',
   aside,
+  media,
 }) {
   const isDark = tone === 'dark'
 
@@ -35,7 +36,16 @@ function CalloutBanner({
               titleClassName="max-w-[13ch]"
             />
 
-            {aside ? (
+            {media ? (
+              <div className="grid gap-5 lg:grid-cols-[minmax(0,17rem)_minmax(0,16rem)] lg:items-end">
+                <div className="image-shell aspect-[0.88] rounded-[1.75rem]">
+                  <img src={media.src} alt={media.alt} className="image-cover" />
+                </div>
+                <div className="rounded-[1.5rem] border border-surface-500/20 bg-surface-0/5 p-6 lg:p-7">
+                  {aside}
+                </div>
+              </div>
+            ) : aside ? (
               <div className="rounded-[1.5rem] border border-surface-500/20 bg-surface-0/5 p-6 lg:p-7">
                 {aside}
               </div>

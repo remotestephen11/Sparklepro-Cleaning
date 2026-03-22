@@ -15,8 +15,8 @@ function Footer() {
         <div className="grid gap-8 rounded-[2rem] border border-surface-600/70 bg-surface-700 px-6 py-8 shadow-card sm:px-8 sm:py-10 xl:grid-cols-[1.25fr_0.8fr_0.8fr_1fr] xl:items-start">
           <div className="max-w-reading">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-brand-yellow-200/60 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft">
-                SP
+              <div className="flex h-11 w-11 items-center justify-center rounded-[1.1rem] border border-brand-yellow-200/60 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft">
+                <span className="font-premium text-lg not-italic tracking-[-0.06em]">SP</span>
               </div>
               <div>
                 <p className="text-base font-semibold leading-5 tracking-[-0.02em] text-surface-0">

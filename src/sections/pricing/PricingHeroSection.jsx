@@ -1,4 +1,5 @@
 import { PageHero, SectionHeader } from '../../components/ui'
+import { siteImages } from '../../data/siteImages'
 
 function PricingHeroSection() {
   const aside = (
@@ -24,9 +25,22 @@ function PricingHeroSection() {
   return (
     <PageHero
       eyebrow="Pricing"
-      title="Clear pricing guidance for spaces that need a dependable standard."
+      title={
+        <>
+          Clear pricing guidance for spaces that expect a <span className="font-premium italic text-surface-600">dependable standard</span>.
+        </>
+      }
       description="SparklePro uses practical starting-from pricing so clients can compare service levels easily while still receiving a quote tailored to the size, condition, and frequency of the space."
       aside={aside}
+      media={siteImages.kitchenDetail}
+      mediaCard={
+        <>
+          <p className="section-kicker text-brand-green-700">Quote clarity</p>
+          <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-surface-700">
+            Practical starting points for premium service, then tailored to the property and cadence.
+          </p>
+        </>
+      }
     />
   )
 }

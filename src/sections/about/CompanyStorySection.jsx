@@ -1,16 +1,22 @@
 import { Card, SectionHeader } from '../../components/ui'
+import { siteImages } from '../../data/siteImages'
 
 function CompanyStorySection() {
   return (
     <section className="bg-surface-0">
       <div className="container section-space">
-        <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-          <SectionHeader
-            eyebrow="Our Story"
-            title="A cleaning company shaped by service standards."
-            className="max-w-[32rem]"
-            titleClassName="max-w-[11ch]"
-          />
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-center">
+          <div className="space-y-8">
+            <SectionHeader
+              eyebrow="Our Story"
+              title="A cleaning company shaped by service standards."
+              className="max-w-[32rem]"
+              titleClassName="max-w-[11ch]"
+            />
+            <div className="image-shell aspect-[0.92] rounded-[2.25rem]">
+              <img src={siteImages.residentialDetail.src} alt={siteImages.residentialDetail.alt} className="image-cover" />
+            </div>
+          </div>
 
           <Card variant="muted" className="space-y-6">
             <p>

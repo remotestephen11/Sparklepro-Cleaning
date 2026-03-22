@@ -1,8 +1,8 @@
 const trustItems = [
-  'Background-checked professionals',
-  'Insured and quality-controlled',
-  'Flexible recurring plans',
-  'Trusted by homes and offices',
+  'Vetted professionals',
+  'Flexible scheduling',
+  'Tailored cleaning plans',
+  'Premium finishing standard',
 ]
 
 function TrustStripSection() {
@@ -24,9 +24,9 @@ function TrustStripSection() {
             {trustItems.map((item) => (
               <div
                 key={item}
-                className="flex items-center gap-3 rounded-full border border-surface-600/70 bg-surface-700/70 px-4 py-3 shadow-inset"
+                className="flex items-center gap-3 rounded-full border border-surface-600/70 bg-surface-700/80 px-4 py-3 shadow-inset"
               >
-                <span className="h-2.5 w-2.5 rounded-full bg-brand-green-400"></span>
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-surface-0/10 text-brand-yellow-200">•</span>
                 <span className="text-sm font-medium text-surface-100">{item}</span>
               </div>
             ))}

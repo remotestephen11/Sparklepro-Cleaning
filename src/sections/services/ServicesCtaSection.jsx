@@ -1,4 +1,5 @@
 import { CalloutBanner } from '../../components/ui'
+import { siteImages } from '../../data/siteImages'
 
 function ServicesCtaSection() {
   return (
@@ -9,6 +10,15 @@ function ServicesCtaSection() {
       primaryAction={{ to: '/contact', label: 'Get a Quote' }}
       secondaryAction={{ to: '/pricing', label: 'Review Pricing' }}
       tone="dark"
+      media={siteImages.residentialDetail}
+      aside={
+        <>
+          <p className="section-kicker text-surface-300">Service guidance</p>
+          <p className="mt-3 text-base leading-7 text-surface-200">
+            We help you choose the right cadence, scope, and finish for the space you need maintained.
+          </p>
+        </>
+      }
     />
   )
 }

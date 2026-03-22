@@ -31,11 +31,11 @@ function Navbar() {
             aria-label="SparklePro Cleaning Services home"
           >
             <div className="flex items-center gap-3 sm:gap-4">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-yellow-200 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft sm:h-12 sm:w-12">
-                SP
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[1.1rem] border border-brand-yellow-200 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft sm:h-12 sm:w-12">
+                <span className="font-premium text-lg not-italic tracking-[-0.06em]">SP</span>
               </div>
               <div className="min-w-0">
-                <p className="truncate text-sm font-semibold leading-5 tracking-[-0.02em] text-surface-700 sm:text-base">
+                <p className="truncate text-sm font-semibold leading-5 tracking-[-0.03em] text-surface-700 sm:text-base">
                   SparklePro
                 </p>
                 <p className="truncate text-[0.72rem] font-medium uppercase tracking-[0.18em] text-surface-400 sm:text-xs">

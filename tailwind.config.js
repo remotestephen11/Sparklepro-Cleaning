@@ -21,7 +21,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        serif: ['"Instrument Serif"', 'Georgia', 'serif'],
       },
       colors: {
         brand: {
@@ -57,6 +58,7 @@ export default {
         },
         surface: {
           0: '#ffffff',
+          10: '#fdfcf9',
           25: '#fcfcfa',
           50: '#f7f6f3',
           75: '#f2f1ed',
@@ -85,6 +87,7 @@ export default {
         content: '76rem',
         reading: '42rem',
         narrow: '34rem',
+        hero: '90rem',
       },
       spacing: {
         14: '3.5rem',
