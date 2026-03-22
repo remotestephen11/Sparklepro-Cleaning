@@ -27,11 +27,11 @@ function PricingPreviewSection() {
   return (
     <section className="border-y border-surface-200/80 bg-surface-50">
       <div className="container section-space">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
           <SectionHeader
             eyebrow="Pricing Preview"
             title="Clear pricing guidance before you request a quote."
-            description="We keep pricing practical and transparent. Final quotes depend on the size of the space, service frequency, and level of detail, but these tiers give a credible starting point."
+            description="Practical starting points before a tailored quote."
             className="max-w-[42rem]"
             titleClassName="max-w-[13ch]"
           />
@@ -43,7 +43,7 @@ function PricingPreviewSection() {
           </Link>
         </div>
 
-        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {pricingTiers.map((tier, index) => (
             <Card
               key={tier.name}
@@ -55,12 +55,12 @@ function PricingPreviewSection() {
                   : 'bg-surface-0',
               ].join(' ')}
             >
-              <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <p className="text-sm font-medium uppercase tracking-[0.14em] text-surface-500">
                     {tier.name}
                   </p>
-                  <p className="mt-5 text-[2.15rem] font-semibold tracking-[-0.04em] text-surface-700">{tier.price}</p>
+                  <p className="mt-4 text-[1.9rem] font-semibold tracking-[-0.04em] text-surface-700">{tier.price}</p>
                 </div>
                 {tier.featured ? (
                   <span className="rounded-full bg-surface-700 px-3 py-1 text-xs font-semibold uppercase tracking-[0.12em] text-surface-0">
@@ -68,8 +68,8 @@ function PricingPreviewSection() {
                   </span>
                 ) : null}
               </div>
-              <p className="mt-5">{tier.summary}</p>
-              <div className="mt-8 border-t border-surface-200 pt-5">
+              <p className="mt-4 text-sm leading-6">{tier.summary}</p>
+              <div className="mt-6 border-t border-surface-200 pt-4">
                 <p className="text-sm font-medium text-surface-600">{tier.detail}</p>
               </div>
             </Card>

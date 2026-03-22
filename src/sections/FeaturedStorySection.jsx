@@ -5,24 +5,24 @@ function FeaturedStorySection() {
   return (
     <section className="bg-surface-0">
       <div className="container section-space">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.98fr)] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.94fr)] lg:items-center">
           <div className="relative">
-            <div className="image-shell aspect-[1.02] rounded-[2.5rem]">
+            <div className="image-shell aspect-[0.94] rounded-[2.25rem]">
               <img
                 src={siteImages.residentialDetail.src}
                 alt={siteImages.residentialDetail.alt}
                 className="image-cover"
               />
             </div>
-            <div className="surface-panel absolute -bottom-6 left-4 right-4 rounded-[1.5rem] bg-surface-0/95 p-5 sm:left-auto sm:right-6 sm:w-[18rem]">
+            <div className="surface-panel absolute -bottom-5 left-4 right-4 rounded-[1.5rem] bg-surface-0/95 p-4 sm:left-auto sm:right-5 sm:w-[16rem]">
               <p className="section-kicker text-brand-green-700">Premium upkeep</p>
-              <p className="mt-2 text-lg font-semibold tracking-[-0.03em] text-surface-700">
-                Spaces cared for with the same attention clients expect from the rest of their home or brand.
+              <p className="mt-2 text-[1rem] font-semibold leading-6 tracking-[-0.03em] text-surface-700">
+                Spaces cared for with the same attention clients expect elsewhere in their home or brand.
               </p>
             </div>
           </div>
 
-          <div className="space-y-8 lg:pl-6">
+          <div className="space-y-6 lg:pl-4">
             <SectionHeader
               eyebrow="A More Considered Standard"
               title={
@@ -30,7 +30,7 @@ function FeaturedStorySection() {
                   Cleaning support that feels <span className="font-premium italic text-surface-600">calm, polished, and managed</span>.
                 </>
               }
-              description="SparklePro is built for clients who want their space to feel professionally maintained without having to coordinate every detail themselves. The experience is structured, discreet, and easy to rely on."
+              description="SparklePro is built for clients who want their space professionally maintained without having to manage every detail."
               className="max-w-[36rem]"
               titleClassName="max-w-[12ch]"
             />
@@ -38,13 +38,13 @@ function FeaturedStorySection() {
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="surface-panel-muted p-6">
                 <p className="section-kicker text-brand-green-700">Residential</p>
-                <p className="mt-3 text-base leading-7 text-surface-600">
+                <p className="mt-3 text-sm leading-6 text-surface-600">
                   Weekly, biweekly, and deep-cleaning support for homes that need to stay guest-ready.
                 </p>
               </div>
               <div className="surface-panel-muted p-6">
                 <p className="section-kicker text-brand-green-700">Commercial</p>
-                <p className="mt-3 text-base leading-7 text-surface-600">
+                <p className="mt-3 text-sm leading-6 text-surface-600">
                   Office and managed-property cleaning with flexible timing and polished presentation.
                 </p>
               </div>

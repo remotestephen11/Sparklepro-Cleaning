@@ -24,16 +24,16 @@ function ContactDetailsSection() {
   return (
     <section className="bg-surface-0">
       <div className="container section-space">
-        <div className="grid gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
+        <div className="grid gap-6 xl:grid-cols-[0.88fr_1.12fr] xl:items-start">
           <div className="space-y-6">
             <Card variant="muted" className="bg-surface-50">
               <SectionHeader
                 eyebrow="Contact Details"
                 title="Reach us directly."
-                description="Use the method that fits your question best, or send a detailed quote request through the form."
-                titleClassName="max-w-[12ch] text-[2rem] sm:text-[2.25rem]"
+                description="Use the method that fits your question, or send a quote request through the form."
+                titleClassName="max-w-[12ch] text-[1.75rem] sm:text-[2rem]"
               />
-              <div className="mt-6 grid gap-6">
+              <div className="mt-5 grid gap-5">
                 {contactMethods.map((item) => (
                   <div key={item.title}>
                     <p className="text-sm font-medium uppercase tracking-[0.12em] text-surface-500">
@@ -46,31 +46,29 @@ function ContactDetailsSection() {
               </div>
             </Card>
 
-            <Card className="bg-surface-0">
+            <Card className="bg-surface-0 p-5 sm:p-6">
               <p className="eyebrow-label">
                 Business Hours
               </p>
-              <div className="mt-6 grid gap-3">
+              <div className="mt-5 grid gap-2.5">
                 {hours.map((item) => (
-                  <p key={item} className="text-base leading-7 text-surface-600">
+                  <p key={item} className="text-sm leading-6 text-surface-600">
                     {item}
                   </p>
                 ))}
               </div>
             </Card>
 
-            <Card variant="dark" className="bg-surface-700">
+            <Card variant="dark" className="bg-surface-700 p-5 sm:p-6">
               <p className="eyebrow-label border-transparent bg-surface-0/5 text-brand-yellow-200 shadow-none">
                 Service Area
               </p>
-              <p className="mt-4 text-base leading-7 text-surface-200">
-                We serve select residential neighborhoods, offices, and managed properties
-                within our active coverage area. Share your location and we will confirm
-                availability with your quote.
+              <p className="mt-4 text-sm leading-6 text-surface-200">
+                We serve select residential neighborhoods, offices, and managed properties within our active coverage area.
               </p>
             </Card>
 
-            <div className="image-shell aspect-[1.12] rounded-[2rem]">
+            <div className="image-shell aspect-[0.88] rounded-[1.75rem]">
               <img src={siteImages.officeWorkspace.src} alt={siteImages.officeWorkspace.alt} className="image-cover" />
             </div>
           </div>
