@@ -1,0 +1,6 @@
+export { default as AboutHeroSection } from './AboutHeroSection'
+export { default as CompanyStorySection } from './CompanyStorySection'
+export { default as MissionValuesSection } from './MissionValuesSection'
+export { default as WhyClientsTrustSection } from './WhyClientsTrustSection'
+export { default as TrustStandardsSection } from './TrustStandardsSection'
+export { default as AboutCtaSection } from './AboutCtaSection'

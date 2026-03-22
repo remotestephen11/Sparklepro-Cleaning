@@ -1,0 +1,5 @@
+export { default as ServicesHeroSection } from './ServicesHeroSection'
+export { default as ServicesCategoriesSection } from './ServicesCategoriesSection'
+export { default as ServicesDetailGridSection } from './ServicesDetailGridSection'
+export { default as ServicesProcessSection } from './ServicesProcessSection'
+export { default as ServicesCtaSection } from './ServicesCtaSection'

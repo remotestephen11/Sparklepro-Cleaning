@@ -1,0 +1,7 @@
+export { default as HeroSection } from './HeroSection'
+export { default as TrustStripSection } from './TrustStripSection'
+export { default as ServicesPreviewSection } from './ServicesPreviewSection'
+export { default as WhyChooseUsSection } from './WhyChooseUsSection'
+export { default as PricingPreviewSection } from './PricingPreviewSection'
+export { default as TestimonialsPreviewSection } from './TestimonialsPreviewSection'
+export { default as CtaBannerSection } from './CtaBannerSection'

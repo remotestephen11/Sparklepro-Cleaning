@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: theme('fontFamily.sans');
+    color: theme('colors.surface.700');
+    background-color: theme('colors.surface.0');
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-surface-0 font-sans text-base leading-7 tracking-[0.01em] text-surface-700 antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  ::selection {
+    background-color: theme('colors.brand.yellow.200');
+    color: theme('colors.surface.700');
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply m-0 font-semibold tracking-tight text-surface-700 text-balance;
+  }
+
+  h1 {
+    @apply text-4xl leading-[1.02] sm:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl leading-[1.08] sm:text-4xl lg:text-[2.75rem];
+  }
+
+  h3 {
+    @apply text-2xl leading-[1.12] sm:text-[2rem];
+  }
+
+  h4 {
+    @apply text-xl leading-[1.2] sm:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg leading-[1.25] sm:text-xl;
+  }
+
+  h6 {
+    @apply text-base leading-[1.35] sm:text-lg;
+  }
+
+  p {
+    @apply m-0 max-w-reading text-base leading-7 text-surface-500;
+  }
+
+  a {
+    @apply text-brand-green-600 underline-offset-4 transition-colors duration-200;
+  }
+
+  a:hover {
+    @apply text-brand-green-700;
+  }
+
+  button {
+    font: inherit;
+  }
+}
