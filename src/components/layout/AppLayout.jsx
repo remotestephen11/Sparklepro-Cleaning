@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import Footer from './Footer'
 import Navbar from './Navbar'
+import ScrollToTop from './ScrollToTop'
 
 function AppLayout() {
   const location = useLocation()
@@ -32,6 +33,7 @@ function AppLayout() {
 
   return (
     <div className="flex min-h-screen flex-col bg-surface-50">
+      <ScrollToTop />
       <Navbar />
       <main className="flex-1">
         <Outlet />
