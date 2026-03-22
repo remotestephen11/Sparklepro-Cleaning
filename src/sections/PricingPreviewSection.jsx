@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Card, SectionHeader } from '../components/ui'
 
 const pricingTiers = [
   {
@@ -24,20 +25,16 @@ const pricingTiers = [
 
 function PricingPreviewSection() {
   return (
-    <section className="border-y border-surface-200 bg-surface-0">
-      <div className="container py-18 lg:py-22">
+    <section className="border-y border-surface-200/80 bg-surface-25">
+      <div className="container section-space">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-reading space-y-4">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-              Pricing Preview
-            </p>
-            <h2>Clear pricing guidance before you request a quote.</h2>
-            <p>
-              We keep pricing practical and transparent. Final quotes depend on the
-              size of the space, service frequency, and level of detail, but these
-              tiers give a credible starting point.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Pricing Preview"
+            title="Clear pricing guidance before you request a quote."
+            description="We keep pricing practical and transparent. Final quotes depend on the size of the space, service frequency, and level of detail, but these tiers give a credible starting point."
+            className="max-w-[42rem]"
+            titleClassName="max-w-[13ch]"
+          />
           <Link
             to="/pricing"
             className="text-sm font-semibold text-surface-700 no-underline transition hover:text-brand-green-700"
@@ -48,14 +45,13 @@ function PricingPreviewSection() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {pricingTiers.map((tier) => (
-            <article
+            <Card
               key={tier.name}
               className={[
-                'rounded-[1.75rem] border p-8',
                 'md:last:col-span-2 xl:last:col-span-1',
                 tier.featured
-                  ? 'border-brand-yellow-300 bg-brand-yellow-50 shadow-card'
-                  : 'border-surface-200 bg-surface-50 shadow-soft',
+                  ? 'border-brand-yellow-300 bg-brand-yellow-50'
+                  : 'bg-surface-0',
               ].join(' ')}
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -75,7 +71,7 @@ function PricingPreviewSection() {
               <div className="mt-8 border-t border-surface-200 pt-5">
                 <p className="text-sm font-medium text-surface-600">{tier.detail}</p>
               </div>
-            </article>
+            </Card>
           ))}
         </div>
       </div>

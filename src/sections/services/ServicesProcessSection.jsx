@@ -1,3 +1,5 @@
+import { Card, SectionHeader } from '../../components/ui'
+
 const steps = [
   {
     step: '01',
@@ -21,28 +23,25 @@ const steps = [
 
 function ServicesProcessSection() {
   return (
-    <section className="border-y border-surface-200 bg-surface-50">
-      <div className="container py-18 lg:py-22">
+    <section className="border-y border-surface-200/80 bg-surface-50">
+      <div className="container section-space">
         <div className="grid gap-10 lg:grid-cols-[0.86fr_1.14fr] lg:items-start">
-          <div className="space-y-4">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-              How It Works
-            </p>
-            <h2 className="max-w-[12ch]">A simple process that keeps service easy to manage.</h2>
-            <p className="max-w-reading">
-              We keep onboarding straightforward so clients can move from inquiry to
-              scheduled service without confusion or unnecessary back-and-forth.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="How It Works"
+            title="A simple process that keeps service easy to manage."
+            description="We keep onboarding straightforward so clients can move from inquiry to scheduled service without confusion or unnecessary back-and-forth."
+            className="max-w-[34rem]"
+            titleClassName="max-w-[11ch]"
+          />
 
           <div className="grid gap-5">
             {steps.map((step) => (
-              <article
+              <Card
                 key={step.step}
-                className="rounded-[1.75rem] border border-surface-200 bg-surface-0 p-7 shadow-soft"
+                className="bg-surface-0 p-7 lg:p-8"
               >
                 <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-green-50 text-sm font-semibold text-brand-green-700">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-brand-green-100 bg-brand-green-50 text-sm font-semibold text-brand-green-700">
                     {step.step}
                   </div>
                   <div>
@@ -50,7 +49,7 @@ function ServicesProcessSection() {
                     <p className="mt-3 text-base leading-7 text-surface-500">{step.description}</p>
                   </div>
                 </div>
-              </article>
+              </Card>
             ))}
           </div>
         </div>

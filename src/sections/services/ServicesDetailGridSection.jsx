@@ -1,3 +1,5 @@
+import { Card, SectionHeader } from '../../components/ui'
+
 const services = [
   {
     title: 'Residential Cleaning',
@@ -54,30 +56,28 @@ const services = [
 function ServicesDetailGridSection() {
   return (
     <section className="bg-surface-0">
-      <div className="container py-18 lg:py-22">
-        <div className="max-w-reading space-y-4">
-          <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-            Detailed Services
-          </p>
-          <h2>Every service is scoped for clarity, consistency, and a polished result.</h2>
-          <p>
-            We keep each offering easy to understand so clients can choose the right
-            level of service for the space, schedule, and standard they need to maintain.
-          </p>
-        </div>
+      <div className="container section-space">
+        <SectionHeader
+          eyebrow="Detailed Services"
+          title="Every service is scoped for clarity, consistency, and a polished result."
+          description="We keep each offering easy to understand so clients can choose the right level of service for the space, schedule, and standard they need to maintain."
+          className="max-w-[42rem]"
+          titleClassName="max-w-[13ch]"
+        />
 
         <div className="mt-10 grid gap-6 lg:grid-cols-2">
           {services.map((service) => (
-            <article
+            <Card
               key={service.title}
-              className="rounded-[1.75rem] border border-surface-200 bg-surface-50 p-8 shadow-soft"
+              variant="muted"
+              className="bg-surface-50"
             >
               <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
                 <div>
                   <h3 className="text-[1.75rem] leading-10">{service.title}</h3>
                   <p className="mt-4 max-w-[40rem]">{service.description}</p>
                 </div>
-                <div className="hidden h-14 w-14 rounded-2xl bg-brand-yellow-100 md:block"></div>
+                <div className="hidden h-14 w-14 rounded-2xl border border-brand-yellow-200 bg-brand-yellow-100 md:block"></div>
               </div>
 
               <div className="mt-8 border-t border-surface-200 pt-6">
@@ -93,7 +93,7 @@ function ServicesDetailGridSection() {
                   ))}
                 </div>
               </div>
-            </article>
+            </Card>
           ))}
         </div>
       </div>

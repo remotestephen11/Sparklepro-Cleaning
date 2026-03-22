@@ -1,4 +1,4 @@
-import { ContactQuoteForm } from '../../components/ui'
+import { Card, SectionHeader, ContactQuoteForm } from '../../components/ui'
 
 const contactMethods = [
   {
@@ -22,13 +22,16 @@ const hours = [
 function ContactDetailsSection() {
   return (
     <section className="bg-surface-0">
-      <div className="container py-18 lg:py-22">
+      <div className="container section-space">
         <div className="grid gap-8 xl:grid-cols-[0.9fr_1.1fr] xl:items-start">
           <div className="space-y-6">
-            <div className="rounded-[1.75rem] border border-surface-200 bg-surface-50 p-8 shadow-soft">
-              <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-                Contact Details
-              </p>
+            <Card variant="muted" className="bg-surface-50">
+              <SectionHeader
+                eyebrow="Contact Details"
+                title="Reach us directly."
+                description="Use the method that fits your question best, or send a detailed quote request through the form."
+                titleClassName="max-w-[12ch] text-[2rem] sm:text-[2.25rem]"
+              />
               <div className="mt-6 grid gap-6">
                 {contactMethods.map((item) => (
                   <div key={item.title}>
@@ -40,10 +43,10 @@ function ContactDetailsSection() {
                   </div>
                 ))}
               </div>
-            </div>
+            </Card>
 
-            <div className="rounded-[1.75rem] border border-surface-200 bg-surface-0 p-8 shadow-soft">
-              <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
+            <Card className="bg-surface-0">
+              <p className="eyebrow-label">
                 Business Hours
               </p>
               <div className="mt-6 grid gap-3">
@@ -53,10 +56,10 @@ function ContactDetailsSection() {
                   </p>
                 ))}
               </div>
-            </div>
+            </Card>
 
-            <div className="rounded-[1.75rem] border border-surface-200 bg-surface-700 p-8 shadow-soft">
-              <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-yellow-200">
+            <Card variant="dark" className="bg-surface-700">
+              <p className="eyebrow-label border-transparent bg-surface-0/5 text-brand-yellow-200 shadow-none">
                 Service Area
               </p>
               <p className="mt-4 text-base leading-7 text-surface-200">
@@ -64,7 +67,7 @@ function ContactDetailsSection() {
                 within our active coverage area. Share your location and we will confirm
                 availability with your quote.
               </p>
-            </div>
+            </Card>
           </div>
 
           <ContactQuoteForm />

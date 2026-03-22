@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Card, SectionHeader } from '../components/ui'
 
 const services = [
   {
@@ -40,20 +41,16 @@ const services = [
 
 function ServicesPreviewSection() {
   return (
-    <section className="bg-surface-0">
-      <div className="container py-18 lg:py-22">
+    <section className="bg-surface-25">
+      <div className="container section-space">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-reading space-y-4">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-              Services Preview
-            </p>
-            <h2>Professional cleaning for the spaces people notice most.</h2>
-            <p>
-              From recurring home care to detailed post-project cleanup, our
-              services are structured to keep spaces clean, presentable, and easy
-              to maintain over time.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Services Preview"
+            title="Professional cleaning for spaces that need to stay consistently well kept."
+            description="From recurring home care to detailed post-project cleanup, our services are structured to keep spaces clean, presentable, and easy to maintain over time."
+            className="max-w-[42rem]"
+            titleClassName="max-w-[12ch]"
+          />
           <Link
             to="/services"
             className="text-sm font-semibold text-surface-700 no-underline transition hover:text-brand-green-700"
@@ -64,26 +61,26 @@ function ServicesPreviewSection() {
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((service) => (
-            <article
+            <Card
               key={service.title}
-              className="group flex h-full flex-col rounded-[1.75rem] border border-surface-200 bg-surface-50 p-8 shadow-soft transition hover:border-surface-300 hover:bg-surface-0"
+              className="group flex h-full flex-col bg-surface-0 transition hover:-translate-y-1 hover:border-surface-300"
             >
-              <div className={`mb-6 flex h-14 w-14 items-center justify-center rounded-2xl ${service.accent}`}>
+              <div className={`mb-8 flex h-14 w-14 items-center justify-center rounded-2xl border border-surface-200/70 ${service.accent}`}>
                 <div className="h-6 w-6 rounded-full border-2 border-surface-700/20"></div>
               </div>
 
               <div className="flex-1">
-                <h3 className="text-[1.65rem] leading-9">{service.title}</h3>
+                <h3 className="max-w-[12ch] text-[1.65rem] leading-[1.1]">{service.title}</h3>
                 <p className="mt-4">{service.description}</p>
               </div>
 
-              <div className="mt-8 flex flex-col items-start gap-3 border-t border-surface-200 pt-5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
-                <p className="text-sm font-medium text-surface-600">{service.detail}</p>
+              <div className="mt-8 flex flex-col items-start gap-3 border-t border-surface-200/80 pt-5 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+                <p className="text-sm font-medium text-surface-500">{service.detail}</p>
                 <span className="text-sm font-semibold text-brand-green-700">
                   Learn more
                 </span>
               </div>
-            </article>
+            </Card>
           ))}
         </div>
       </div>

@@ -10,18 +10,30 @@ function PageHero({
   descriptionClassName = 'max-w-reading text-base leading-8 sm:text-lg',
 }) {
   return (
-    <section className="border-b border-surface-200 bg-gradient-to-b from-surface-50 to-surface-0">
-      <div className="container py-16 sm:py-20 lg:py-24">
-        <div className={aside ? 'grid gap-8 md:gap-10 lg:grid-cols-[1fr_0.92fr] lg:items-end lg:gap-12' : ''}>
+    <section className="relative overflow-hidden border-b border-surface-200/80 bg-surface-25">
+      <div className="absolute inset-x-0 top-0 h-64 bg-[radial-gradient(circle_at_top_left,rgba(255,212,94,0.18),transparent_40%),radial-gradient(circle_at_right,rgba(59,135,98,0.08),transparent_28%)]" />
+      <div className="container relative section-space">
+        <div
+          className={
+            aside
+              ? 'grid gap-8 md:gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(20rem,0.92fr)] lg:items-end lg:gap-12'
+              : ''
+          }
+        >
           <SectionHeader
             eyebrow={eyebrow}
             title={title}
             description={description}
-            className="max-w-[52rem] space-y-6"
-            titleClassName={`${titleMaxWidth} text-4xl leading-[1.02] sm:text-5xl lg:text-6xl`}
+            className="max-w-[54rem] space-y-6"
+            titleClassName={`${titleMaxWidth} text-[2.9rem] leading-[0.98] sm:text-[3.7rem] lg:text-[4.6rem]`}
             descriptionClassName={descriptionClassName}
           />
-          {aside ? <Card>{aside}</Card> : null}
+          {aside ? (
+            <Card variant="muted" className="relative overflow-hidden">
+              <div className="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-brand-yellow-200 to-transparent" />
+              {aside}
+            </Card>
+          ) : null}
         </div>
       </div>
     </section>

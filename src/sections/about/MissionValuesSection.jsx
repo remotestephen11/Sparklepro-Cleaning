@@ -1,3 +1,5 @@
+import { Card, SectionHeader } from '../../components/ui'
+
 const values = [
   {
     title: 'Consistency',
@@ -18,29 +20,26 @@ const values = [
 
 function MissionValuesSection() {
   return (
-    <section className="border-y border-surface-200 bg-surface-50">
-      <div className="container py-18 lg:py-22">
-        <div className="space-y-5">
-          <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-            Mission and Values
-          </p>
-          <h2 className="max-w-[14ch]">To make professional cleaning feel seamless and reliable.</h2>
-          <p className="max-w-reading">
-            Our mission is to give clients confidence in the spaces they live and work in
-            through service that is structured, responsive, and consistently well executed.
-          </p>
-        </div>
+    <section className="border-y border-surface-200/80 bg-surface-50">
+      <div className="container section-space">
+        <SectionHeader
+          eyebrow="Mission and Values"
+          title="To make professional cleaning feel seamless and reliable."
+          description="Our mission is to give clients confidence in the spaces they live and work in through service that is structured, responsive, and consistently well executed."
+          className="max-w-[42rem]"
+          titleClassName="max-w-[13ch]"
+        />
 
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {values.map((value) => (
-            <article
+            <Card
               key={value.title}
-              className="rounded-[1.75rem] border border-surface-200 bg-surface-0 p-8 shadow-soft"
+              className="bg-surface-0"
             >
-              <div className="h-12 w-12 rounded-2xl bg-brand-yellow-100"></div>
+              <div className="h-12 w-12 rounded-2xl border border-brand-yellow-200 bg-brand-yellow-100"></div>
               <h3 className="mt-6 text-2xl">{value.title}</h3>
               <p className="mt-4">{value.description}</p>
-            </article>
+            </Card>
           ))}
         </div>
       </div>

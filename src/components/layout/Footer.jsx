@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { Button } from '../ui'
 
 const quickLinks = [
   { to: '/about', label: 'About' },
@@ -9,19 +10,19 @@ const quickLinks = [
 
 function Footer() {
   return (
-    <footer className="border-t border-surface-200 bg-surface-700 text-surface-100">
-      <div className="container py-12 sm:py-14 lg:py-16">
-        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.4fr_0.8fr_1fr]">
+    <footer className="border-t border-surface-600/80 bg-surface-800 text-surface-100">
+      <div className="container py-14 sm:py-16 lg:py-20">
+        <div className="grid gap-8 rounded-[2rem] border border-surface-600/70 bg-surface-700 px-6 py-8 shadow-card sm:px-8 sm:py-10 xl:grid-cols-[1.25fr_0.8fr_0.8fr_1fr] xl:items-start">
           <div className="max-w-reading">
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-yellow-300 text-sm font-bold text-surface-700">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-brand-yellow-200/60 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft">
                 SP
               </div>
               <div>
-                <p className="text-base font-semibold leading-5 text-surface-0">
+                <p className="text-base font-semibold leading-5 tracking-[-0.02em] text-surface-0">
                   SparklePro
                 </p>
-                <p className="text-sm leading-5 text-surface-300">
+                <p className="text-[0.72rem] font-medium uppercase tracking-[0.18em] text-surface-300">
                   Cleaning Services
                 </p>
               </div>
@@ -30,9 +31,17 @@ function Footer() {
               Reliable residential and commercial cleaning with a polished,
               detail-driven standard and flexible scheduling for busy homes and teams.
             </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Button to="/contact" variant="accent" className="w-full sm:w-auto">
+                Request a Quote
+              </Button>
+              <Button href="tel:+1234567890" variant="inverse" className="w-full sm:w-auto">
+                Call Us
+              </Button>
+            </div>
           </div>
 
-          <div className="md:col-span-2 xl:col-span-1">
+          <div>
             <h2 className="text-base font-semibold text-surface-0">Quick Links</h2>
             <div className="mt-5 flex flex-col gap-3">
               {quickLinks.map((item) => (
@@ -44,6 +53,15 @@ function Footer() {
                   {item.label}
                 </Link>
               ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-base font-semibold text-surface-0">Service Highlights</h2>
+            <div className="mt-5 space-y-3">
+              <p className="text-sm leading-7 text-surface-300">Recurring home cleaning</p>
+              <p className="text-sm leading-7 text-surface-300">Office and workspace upkeep</p>
+              <p className="text-sm leading-7 text-surface-300">Deep cleaning and move support</p>
             </div>
           </div>
 
@@ -69,7 +87,7 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-surface-600 pt-6 text-sm text-surface-400 md:mt-12 md:flex-row md:items-center md:justify-between">
+        <div className="mt-8 flex flex-col gap-4 px-2 text-sm text-surface-400 md:flex-row md:items-center md:justify-between">
           <p>&copy; 2026 SparklePro Cleaning Services. All rights reserved.</p>
           <p>Professional cleaning for homes, offices, and recurring upkeep.</p>
         </div>

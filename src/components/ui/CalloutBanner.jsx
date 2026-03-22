@@ -14,28 +14,31 @@ function CalloutBanner({
   const isDark = tone === 'dark'
 
   return (
-    <section className={isDark ? 'bg-surface-0' : 'bg-surface-50'}>
-      <div className="container py-16 sm:py-20 lg:py-24">
+    <section className={isDark ? 'bg-surface-25' : 'bg-surface-50'}>
+      <div className="container section-space">
         <Card
           variant={isDark ? 'elevated' : 'muted'}
           className={
             isDark
-              ? 'rounded-[2rem] bg-surface-700 p-8 lg:p-12'
-              : 'rounded-[2rem] bg-surface-50 p-8 lg:p-12'
+              ? 'relative overflow-hidden rounded-[2rem] border-surface-600/70 bg-surface-700 p-8 lg:p-12'
+              : 'relative overflow-hidden rounded-[2rem] bg-surface-50 p-8 lg:p-12'
           }
         >
-          <div className="flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-brand-yellow-200/80 to-transparent" />
+          <div className="relative flex flex-col gap-8 sm:gap-10 lg:flex-row lg:items-center lg:justify-between">
             <SectionHeader
               eyebrow={eyebrow}
               title={title}
               description={description}
               invert={isDark}
               className="max-w-[38rem]"
-              titleClassName="max-w-[14ch]"
+              titleClassName="max-w-[13ch]"
             />
 
             {aside ? (
-              <div className="rounded-[1.5rem] bg-surface-0/5 p-6 lg:p-7">{aside}</div>
+              <div className="rounded-[1.5rem] border border-surface-500/20 bg-surface-0/5 p-6 lg:p-7">
+                {aside}
+              </div>
             ) : (
               <div className="flex flex-col gap-4 sm:flex-row">
                 {primaryAction ? (

@@ -3,8 +3,8 @@ import { Button, Card, SectionHeader } from '../components/ui'
 function CtaBannerSection() {
   return (
     <section className="bg-surface-0">
-      <div className="container py-18 lg:py-22">
-        <Card variant="elevated" className="overflow-hidden rounded-[2rem] bg-surface-700 p-0">
+      <div className="container section-space">
+        <Card variant="dark" className="overflow-hidden rounded-[2rem] p-0">
           <div className="grid gap-8 px-6 py-10 sm:px-10 lg:grid-cols-[1.15fr_0.85fr] lg:px-14 lg:py-14">
             <SectionHeader
               eyebrow="Ready to get started?"
@@ -15,9 +15,9 @@ function CtaBannerSection() {
               titleClassName="max-w-[14ch] text-surface-0"
             />
 
-            <div className="flex flex-col justify-between gap-8 rounded-[1.5rem] bg-surface-0/5 p-6">
+            <div className="flex flex-col justify-between gap-8 rounded-[1.5rem] border border-surface-500/20 bg-surface-0/5 p-6">
               <div className="space-y-3">
-                <p className="text-sm font-medium uppercase tracking-[0.14em] text-surface-300">
+                <p className="eyebrow-label border-transparent bg-surface-0/5 text-surface-300 shadow-none">
                   Fast next step
                 </p>
                 <p className="text-base leading-7 text-surface-200">

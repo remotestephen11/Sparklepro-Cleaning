@@ -8,11 +8,11 @@ const categories = [
 
 function ServicesCategoriesSection() {
   return (
-    <section className="border-b border-surface-200 bg-surface-700">
-      <div className="container py-8">
+    <section className="border-b border-surface-200/80 bg-surface-800">
+      <div className="container section-space-tight">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-[34rem]">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-yellow-200">
+            <p className="eyebrow-label border-surface-500/70 bg-surface-0/5 text-brand-yellow-200 shadow-none">
               Service Categories
             </p>
             <p className="mt-3 text-base leading-7 text-surface-200">
@@ -25,7 +25,7 @@ function ServicesCategoriesSection() {
             {categories.map((category) => (
               <div
                 key={category}
-                className="rounded-full border border-surface-600 bg-surface-700/60 px-4 py-3 text-sm font-medium text-surface-100"
+                className="rounded-full border border-surface-600/70 bg-surface-700/70 px-4 py-3 text-sm font-medium text-surface-100 shadow-inset"
               >
                 {category}
               </div>

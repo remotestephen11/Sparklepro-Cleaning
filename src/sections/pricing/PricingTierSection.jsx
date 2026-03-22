@@ -1,3 +1,5 @@
+import { Card, SectionHeader } from '../../components/ui'
+
 const pricingTiers = [
   {
     name: 'Essential',
@@ -35,28 +37,24 @@ const pricingTiers = [
 function PricingTierSection() {
   return (
     <section className="bg-surface-0">
-      <div className="container py-18 lg:py-22">
-        <div className="max-w-reading space-y-4">
-          <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-            Pricing Tiers
-          </p>
-          <h2>Choose a starting point based on the level of care your space needs.</h2>
-          <p>
-            These tiers are designed to make service comparison easy while still leaving
-            room for a realistic quote that reflects the property and service scope.
-          </p>
-        </div>
+      <div className="container section-space">
+        <SectionHeader
+          eyebrow="Pricing Tiers"
+          title="Choose a starting point based on the level of care your space needs."
+          description="These tiers are designed to make service comparison easy while still leaving room for a realistic quote that reflects the property and service scope."
+          className="max-w-[42rem]"
+          titleClassName="max-w-[13ch]"
+        />
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {pricingTiers.map((tier, index) => (
-            <article
+            <Card
               key={tier.name}
               className={[
-                'rounded-[1.75rem] border p-8',
                 index === pricingTiers.length - 1 ? 'md:col-span-2 xl:col-span-1' : '',
                 tier.featured
-                  ? 'border-brand-yellow-300 bg-brand-yellow-50 shadow-card'
-                  : 'border-surface-200 bg-surface-50 shadow-soft',
+                  ? 'border-brand-yellow-300 bg-brand-yellow-50'
+                  : 'bg-surface-50',
               ].join(' ')}
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -87,7 +85,7 @@ function PricingTierSection() {
                   ))}
                 </div>
               </div>
-            </article>
+            </Card>
           ))}
         </div>
       </div>

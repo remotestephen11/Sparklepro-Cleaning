@@ -1,3 +1,5 @@
+import { Card, SectionHeader } from '../components/ui'
+
 const testimonials = [
   {
     quote:
@@ -16,25 +18,21 @@ const testimonials = [
 function TestimonialsPreviewSection() {
   return (
     <section className="bg-surface-50">
-      <div className="container py-18 lg:py-22">
+      <div className="container section-space">
         <div className="grid gap-10 xl:grid-cols-[0.82fr_1.18fr] xl:items-start">
-          <div className="max-w-reading space-y-4">
-            <p className="text-sm font-medium uppercase tracking-[0.14em] text-brand-green-600">
-              Testimonials Preview
-            </p>
-            <h2>Trusted by clients who notice the difference in the details.</h2>
-            <p>
-              The strongest signal for a cleaning business is repeat trust. These
-              comments reflect the kind of reliability, polish, and consistency we
-              aim to provide on every visit.
-            </p>
-          </div>
+          <SectionHeader
+            eyebrow="Testimonials Preview"
+            title="Trusted by clients who notice the difference in the details."
+            description="The strongest signal for a cleaning business is repeat trust. These comments reflect the kind of reliability, polish, and consistency we aim to provide on every visit."
+            className="max-w-[36rem]"
+            titleClassName="max-w-[12ch]"
+          />
 
           <div className="grid gap-6 md:grid-cols-2">
             {testimonials.map((testimonial) => (
-              <article
+              <Card
                 key={testimonial.name}
-                className="rounded-[1.75rem] border border-surface-200 bg-surface-0 p-8 shadow-soft"
+                className="bg-surface-0"
               >
                 <div className="text-4xl leading-none text-brand-yellow-400">"</div>
                 <p className="mt-4 text-lg leading-8 text-surface-600">{testimonial.quote}</p>
@@ -42,7 +40,7 @@ function TestimonialsPreviewSection() {
                   <p className="font-semibold text-surface-700">{testimonial.name}</p>
                   <p className="mt-1 text-sm text-surface-500">{testimonial.role}</p>
                 </div>
-              </article>
+              </Card>
             ))}
           </div>
         </div>

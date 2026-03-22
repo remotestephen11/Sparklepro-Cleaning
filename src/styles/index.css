@@ -8,11 +8,13 @@
   html {
     font-family: theme('fontFamily.sans');
     color: theme('colors.surface.700');
-    background-color: theme('colors.surface.0');
+    background-color: theme('colors.surface.25');
+    scroll-behavior: smooth;
   }
 
   body {
-    @apply m-0 min-h-screen bg-surface-0 font-sans text-base leading-7 tracking-[0.01em] text-surface-700 antialiased;
+    @apply m-0 min-h-screen bg-surface-25 font-sans text-[15px] leading-7 tracking-[0.01em] text-surface-600 antialiased sm:text-base;
+    background-image: radial-gradient(circle at top, rgba(255, 244, 205, 0.28), transparent 32%);
   }
 
   #root {
@@ -34,23 +36,23 @@
   h4,
   h5,
   h6 {
-    @apply m-0 font-semibold tracking-tight text-surface-700 text-balance;
+    @apply m-0 font-semibold tracking-[-0.03em] text-surface-700 text-balance;
   }
 
   h1 {
-    @apply text-4xl leading-[1.02] sm:text-5xl lg:text-6xl;
+    @apply text-[2.75rem] leading-[0.98] sm:text-[3.5rem] lg:text-[4.5rem];
   }
 
   h2 {
-    @apply text-3xl leading-[1.08] sm:text-4xl lg:text-[2.75rem];
+    @apply text-[2.15rem] leading-[1.02] sm:text-[2.6rem] lg:text-[3.25rem];
   }
 
   h3 {
-    @apply text-2xl leading-[1.12] sm:text-[2rem];
+    @apply text-[1.7rem] leading-[1.08] sm:text-[2rem];
   }
 
   h4 {
-    @apply text-xl leading-[1.2] sm:text-2xl;
+    @apply text-[1.3rem] leading-[1.18] sm:text-[1.55rem];
   }
 
   h5 {
@@ -75,5 +77,37 @@
 
   button {
     font: inherit;
+  }
+
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .section-space {
+    @apply py-18 sm:py-20 lg:py-26;
+  }
+
+  .section-space-tight {
+    @apply py-14 sm:py-16;
+  }
+
+  .surface-panel {
+    @apply rounded-[1.75rem] border border-surface-200/80 bg-surface-0 shadow-soft;
+  }
+
+  .surface-panel-muted {
+    @apply rounded-[1.75rem] border border-surface-200/70 bg-surface-50 shadow-soft;
+  }
+
+  .eyebrow-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-surface-200/80 bg-surface-0 px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-surface-500 shadow-inset;
+  }
+
+  .grid-card {
+    @apply rounded-[1.75rem] border border-surface-200/80 bg-surface-0 shadow-soft transition duration-300;
   }
 }

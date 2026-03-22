@@ -15,12 +15,14 @@ function Navbar() {
 
   const navLinkClassName = ({ isActive }) =>
     [
-      'text-sm font-medium tracking-[0.01em] transition-colors duration-200',
-      isActive ? 'text-surface-700' : 'text-surface-500 hover:text-surface-700',
+      'relative text-sm font-medium tracking-[0.01em] transition-colors duration-200 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-brand-yellow-400 after:transition-transform after:duration-200',
+      isActive
+        ? 'text-surface-700 after:scale-x-100'
+        : 'text-surface-500 hover:text-surface-700 hover:after:scale-x-100',
     ].join(' ')
 
   return (
-    <header className="sticky top-0 z-30 border-b border-surface-200/80 bg-surface-0/95 backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-surface-200/80 bg-surface-0/90 backdrop-blur-xl">
       <div className="container">
         <div className="flex min-h-18 items-center justify-between gap-4 sm:min-h-20 sm:gap-6">
           <Link
@@ -29,14 +31,14 @@ function Navbar() {
             aria-label="SparklePro Cleaning Services home"
           >
             <div className="flex items-center gap-3 sm:gap-4">
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-brand-yellow-300 text-sm font-bold text-surface-700 shadow-soft sm:h-11 sm:w-11">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-brand-yellow-200 bg-brand-yellow-300 text-sm font-bold text-surface-800 shadow-soft sm:h-12 sm:w-12">
                 SP
               </div>
               <div className="min-w-0">
-                <p className="truncate text-sm font-semibold leading-5 text-surface-700 sm:text-base">
+                <p className="truncate text-sm font-semibold leading-5 tracking-[-0.02em] text-surface-700 sm:text-base">
                   SparklePro
                 </p>
-                <p className="truncate text-xs leading-5 text-surface-500 sm:text-sm">
+                <p className="truncate text-[0.72rem] font-medium uppercase tracking-[0.18em] text-surface-400 sm:text-xs">
                   Cleaning Services
                 </p>
               </div>
@@ -62,7 +64,7 @@ function Navbar() {
 
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-surface-200 bg-surface-0 text-surface-700 lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-surface-200 bg-surface-0 text-surface-700 shadow-inset lg:hidden"
             aria-expanded={isMenuOpen}
             aria-label="Toggle navigation menu"
             onClick={() => setIsMenuOpen((open) => !open)}
@@ -78,12 +80,19 @@ function Navbar() {
 
         {isMenuOpen ? (
           <div className="border-t border-surface-200 py-4 lg:hidden">
-            <nav className="flex flex-col gap-4" aria-label="Mobile primary">
+            <nav className="flex flex-col gap-3 rounded-[1.5rem] bg-surface-50 p-4" aria-label="Mobile primary">
               {navigationItems.map((item) => (
                 <NavLink
                   key={item.to}
                   to={item.to}
-                  className={navLinkClassName}
+                  className={({ isActive }) =>
+                    [
+                      'rounded-xl px-4 py-3 text-sm font-medium no-underline transition',
+                      isActive
+                        ? 'bg-surface-0 text-surface-700 shadow-inset'
+                        : 'text-surface-500 hover:bg-surface-0 hover:text-surface-700',
+                    ].join(' ')
+                  }
                   end={item.to === '/'}
                   onClick={() => setIsMenuOpen(false)}
                 >
