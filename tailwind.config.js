@@ -6,17 +6,17 @@ export default {
       center: true,
       padding: {
         DEFAULT: '1rem',
-        sm: '1.5rem',
-        lg: '2rem',
-        xl: '2.5rem',
-        '2xl': '2.5rem',
+        sm: '1.25rem',
+        lg: '1.75rem',
+        xl: '2rem',
+        '2xl': '2rem',
       },
       screens: {
         sm: '640px',
         md: '768px',
         lg: '1024px',
-        xl: '1240px',
-        '2xl': '1360px',
+        xl: '1380px',
+        '2xl': '1520px',
       },
     },
     extend: {
@@ -84,10 +84,10 @@ export default {
         inset: 'inset 0 1px 0 rgba(255, 255, 255, 0.55)',
       },
       maxWidth: {
-        content: '76rem',
+        content: '84rem',
         reading: '42rem',
         narrow: '34rem',
-        hero: '90rem',
+        hero: '98rem',
       },
       spacing: {
         14: '3.5rem',
